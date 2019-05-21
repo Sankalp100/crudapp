@@ -35,7 +35,7 @@
             if(filter_var($email, FILTER_VALIDATE_EMAIL)){
                 
                 
-                $query="SELECT email FROM users WHERE email = '$email'";
+                $query="SELECT email FROM employee WHERE email = '$email'";
                 $fire= mysqli_query($con,$query) or die ("can not fire query to select email".mysqli_error($con));
                 if(mysqli_num_rows($fire)>0) {
                     $msg .= "email is used !! <br>"; 
@@ -48,7 +48,7 @@
        }else{ $msg .= "email can not be blank !! <br>";}
 
        if($first_name_valid && $last_name_valid && $email_valid){
-        $query = "INSERT INTO users(first_name,last_name,email) VALUES('$first_name','$last_name','$email')";  
+        $query = "INSERT INTO employee(first_name,last_name,email) VALUES('$first_name','$last_name','$email')";  
 
         $fire = mysqli_query($con,$query) or die("cannot insert data into database". mysqli_error($con));
  

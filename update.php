@@ -2,7 +2,7 @@
 <?php
     if(isset($_GET['upd'])){
         $id = $_GET['upd'];
-        $query = "SELECT * FROM users WHERE id = $id";
+        $query = "SELECT * FROM employee WHERE id = $id";
         $fire = mysqli_query($con,$query) or die("can not fetch the data.".mysqli_error($con));
         $user = mysqli_fetch_assoc($fire);
     }
@@ -14,7 +14,7 @@
        $last_name = $_POST['last_name'];
        $email = $_POST['email'];
 
-       $query = "UPDATE users SET first_name ='$first_name',last_name = '$last_name',email='$email' WHERE id=$id";  
+       $query = "UPDATE employee SET first_name ='$first_name',last_name = '$last_name',email='$email' WHERE id=$id";  
 
        $fire = mysqli_query($con,$query) or die("cannot update data into database". mysqli_error($con));
 

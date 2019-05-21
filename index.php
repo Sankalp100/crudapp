@@ -4,7 +4,7 @@
    <?php
         if(isset($_GET['del'])){
             $id = $_GET['del'];
-            $query= "DELETE FROM users WHERE id = $id ";
+            $query= "DELETE FROM employee WHERE id = $id ";
             $fire = mysqli_query($con,$query) or die("can not delete the data").mysqli_error($con);
             //if($fire) echo "Data deleted from database";
         }
@@ -70,7 +70,7 @@
                 </thead>
                 <tbody>
                 <?php
-                    $query= "SELECT * FROM users";
+                    $query= "SELECT * FROM employee";
                     $fire= mysqli_query($con,$query) or die("".mysqli_error($con));
 
                     if(mysqli_num_rows($fire)>0){ 
